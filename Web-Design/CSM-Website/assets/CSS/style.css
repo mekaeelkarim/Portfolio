@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url(../images/basketball-background.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 100px;
+
+}
+  
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo 
+{
+    position: relative;
+    font-size: 2.5em;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+header .navigation {
+    position: relative;
+    display: flex;
+    font-size: 1.3em;
+}
+
+header .navigation li
+{
+    display: inline-block;
+    list-style: none;
+    color: #fff;
+    margin-right: 40px;
+    text-decoration: none;
+}
+
+header .navigation li:hover
+{
+    color: blue;
+}
+
+.content {
+    max-width: 600px;
+}
+
+.content .contentArea h2 {
+    font-size: 4em;
+    color: #fff;
+    line-height: 1em;
+}
+
+.content .contentArea p {
+    margin: 20px 0px;
+    font-size: 1.5em;
+    color: #fff;
+    line-height: 1em;
+    font-weight: 300;
+}
+
+.book {
+    display: inline-block;
+    background-color: #8FBC8F;
+    color: #fff;
+    padding: 10px 30px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 1px;
+}

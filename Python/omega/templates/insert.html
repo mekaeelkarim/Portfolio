@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Company Lookup</title>
+</head>
+
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Query</a>
+        <a href="{{ url_for('insertpage') }}">Insert</a>
+    </nav>
+    <form action="{{ url_for('insert') }}" method="POST">
+        <input placeholder="Company Name" id="name" name="name" />
+        <input placeholder="2020 employee count" id="year20" name="year20" />
+        <input placeholder="2019 employee count" id="year19" name="year19" />
+        <input placeholder="2018 employee count" id="year18" name="year18" />
+        <input placeholder="2017 employee count" id="year17" name="year17" />
+        <input placeholder="2016 employee count" id="year16" name="year16" />
+        <button type="submit">Insert!</button>
+    </form>
+</body>
+
+</html>

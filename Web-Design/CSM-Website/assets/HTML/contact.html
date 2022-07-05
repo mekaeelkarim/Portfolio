@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-color: #fff;
+        }
+
+        .content {
+            margin: 150px;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo 
+        {
+            position: relative;
+            font-size: 2.5em;
+            color: black;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        header .navigation {
+            position: relative;
+            display: flex;
+            font-size: 1.3em;
+        }
+
+        header .navigation li
+        {
+            display: inline-block;
+            list-style: none;
+            color: #fff;
+            margin-right: 40px;
+            text-decoration: none;
+        }
+
+        header .navigation li:hover
+        {
+            color: blue;
+        }
+
+    </style>
+  </head>
+  <body>
+    <header>
+        <h1 class = 'logo'>CSM Sports</h1>
+        <ul class = 'navigation'>
+          <li><a href = '../../index.html'>Home</a></li>
+          <li><a href = './trainers.html'>Trainers</a></li>
+          <li><a href = './contact.html'>Contact</a></li>
+        </ul>
+      </header>
+    <div class="content">
+        <h1
+        class="text-green text-center font-weight-bold"
+        style="font-size: 40px;"
+        >
+        Schedule a Session
+        </h1>
+
+        <h4 class="text-blue text-center font-weight-bold" style="font-size: 20px;">
+        Contact Form
+        </h4>
+
+        <div class="container">
+        <br />
+
+        <div class="col-lg-5 m-auto d-block">
+            <form action="#" onsubmit="return validation()" class="bg-light">
+            <div class="form-group">
+                <label for="name" class="font-weight-regular"> Name </label>
+                <input
+                type="text"
+                name="name"
+                class="form-control"
+                id="name"
+                autocomplete="off"
+                />
+                <span id="Name" class="text-danger font-weight-regular"> </span>
+            </div>
+
+            <div class="form-group">
+                <label class="font-weight-regular"> Email </label>
+                <input
+                type="text"
+                name="email"
+                class="form-control"
+                id="emails"
+                autocomplete="off"
+                />
+                <span id="emailids" class="text-danger font-weight-regular"> </span>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="font-weight-regular"> Mobile Number </label>
+                <input
+                type="text"
+                name="mobile"
+                class="form-control"
+                id="mobileNumber"
+                autocomplete="off"
+                />
+                <span id="mobileno" class="text-danger font-weight-regular"> </span>
+            </div>
+
+            <div class="form-group">
+                <label class="font-weight-regular"> Describe your training needs </label>
+                <input
+                type="text"
+                name="Describe"
+                class="form-control"
+                id="conpass"
+                autocomplete="off"
+                />
+                <span id="confrmpass" class="text-danger font-weight-regular">
+                </span>
+            </div>
+
+            <input
+                type="submit"
+                name="submit"
+                value="Submit"
+                class="btn btn-primary"
+                autocomplete="off"
+            />
+            <input
+                type="reset"
+                name="reset"
+                value="Reset"
+                class="btn btn-secondary"
+                autocomplete="off"
+            />
+            </form>
+
+            <br /><br />
+        </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+      function validation() {
+        var name = document.getElementById("name").value;
+        var user = document.getElementById("user").value;
+        var pass = document.getElementById("pass").value;
+        var confirmpass = document.getElementById("conpass").value;
+        var mobileNumber = document.getElementById("mobileNumber").value;
+        var emails = document.getElementById("emails").value;
+
+        if (name == "") {
+          document.getElementById("Name").innerHTML =
+            " ** Please fill the Name field";
+          return false;
+        }
+
+        if (emails == "") {
+          document.getElementById("emailids").innerHTML =
+            " ** Please fill the email id field";
+          return false;
+        }
+        if (emails.indexOf("@") <= 0) {
+          document.getElementById("emailids").innerHTML = " ** Invalid Email";
+          return false;
+        }
+
+        if (
+          emails.charAt(emails.length - 4) != "." &&
+          emails.charAt(emails.length - 3) != "."
+        ) {
+          document.getElementById("emailids").innerHTML = " ** Invalid Email";
+          return false;
+        }
+
+        if (user == "") {
+          document.getElementById("username").innerHTML =
+            " ** Please fill the username field";
+          return false;
+        }
+        if (user.length <= 3 || user.length > 20) {
+          document.getElementById("username").innerHTML =
+            " ** Username lenght must be between 3 and 20";
+          return false;
+        }
+        if (!isNaN(user)) {
+          document.getElementById("username").innerHTML =
+            " ** only characters are allowed";
+          return false;
+        }
+
+        if (pass == "") {
+          document.getElementById("passwords").innerHTML =
+            " ** Please fill the password field";
+          return false;
+        }
+        if (pass.length <= 5 || pass.length > 20) {
+          document.getElementById("passwords").innerHTML =
+            " ** Passwords lenght must be between  5 and 20";
+          return false;
+        }
+
+        if (pass != confirmpass) {
+          document.getElementById("confrmpass").innerHTML =
+            " ** Password Mismatch";
+          return false;
+        }
+
+        if (confirmpass == "") {
+          document.getElementById("confrmpass").innerHTML =
+            " ** Please fill the confirmpassword field";
+          return false;
+        }
+
+        if (mobileNumber == "") {
+          document.getElementById("mobileno").innerHTML =
+            " ** Please fill the mobile NUmber field";
+          return false;
+        }
+        if (isNaN(mobileNumber)) {
+          document.getElementById("mobileno").innerHTML =
+            " ** user must write digits only not characters";
+          return false;
+        }
+        if (mobileNumber.length != 11) {
+          document.getElementById("mobileno").innerHTML =
+            " ** Mobile Number must be 11 digits only";
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
